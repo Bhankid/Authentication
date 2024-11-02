@@ -1,0 +1,25 @@
+{
+  "name": "authentication",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build --ssrManifest --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
+    "preview": "cross-env NODE_ENV=production node server"
+  },
+  "dependencies": {
+    "@clerk/clerk-js": "^5.30.0",
+    "@clerk/themes": "^2.1.40",
+    "compression": "^1.7.4",
+    "dotenv": "^16.4.5",
+    "express": "^5.0.1",
+    "sirv": "^3.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "vite": "^5.4.9"
+  }
+}
